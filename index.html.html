@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Happy 23rd Birthday My Fidelle 🎂</title>
+</head>
+<body class="bg-pink-50 text-maroon-900 font-sans scroll-smooth">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full bg-red-900 text-white py-3 shadow-md z-50">
+    <div class="flex justify-center space-x-6 font-semibold">
+      <a href="#hero" class="hover:text-pink-300 transition">Home</a>
+      <a href="#message" class="hover:text-pink-300 transition">Message</a>
+      <a href="#gallery" class="hover:text-pink-300 transition">Gallery</a>
+      <a href="#music" class="hover:text-pink-300 transition">Music</a>
+      <a href="#things" class="hover:text-pink-300 transition">Fun Facts</a>
+      <a href="#closing" class="hover:text-pink-300 transition">Love</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="relative h-screen flex flex-col justify-center items-center text-center text-white bg-cover bg-center" style="background-image: url('images/I.png');">
+    <div class="absolute inset-0 bg-red-900/70"></div>
+    <div class="relative z-10 px-4">
+      <h1 class="text-4xl md:text-6xl font-bold">Happy 23rd Birthday, Fidelle! 🎂</h1>
+      <h2 class="mt-4 text-lg md:text-2xl font-light">Thank you for another amazing year Lovely 💕</h2>
+    </div>
+  </header>
+
+  <!-- Message Section -->
+  <section id="message" class="py-20 px-4 text-center">
+    <div class="max-w-2xl mx-auto bg-pink-100 rounded-2xl shadow-lg p-8">
+      <h2 class="text-3xl font-bold text-red-900 mb-4">To My Baby</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Happy Birthday baby, I love you a lot and I wish you another amazing year going from success to success.  
+        I'm proud of you lovely ❤️
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-20 px-4 text-center">
+    <h2 class="text-3xl font-bold text-red-900 mb-8">My babies</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <img src="images/IMG_1.jpg" alt="Photo 1" class="rounded-xl shadow-md hover:scale-105 transition">
+      <img src="images/IMG_2.jpg" alt="Photo 2" class="rounded-xl shadow-md hover:scale-105 transition">
+      <img src="images/IMG_3.jpg" alt="Photo 3" class="rounded-xl shadow-md hover:scale-105 transition">
+    </div>
+  </section>
+
+  <!-- Music Section -->
+  <section id="music" class="py-20 bg-gradient-to-r from-pink-100 to-pink-200 text-center">
+    <audio id="bg-music">
+      <source src="music/Would You.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <button 
+      onclick="document.getElementById('bg-music').play(); this.style.display='none';"
+      class="bg-red-800 text-white px-12 py-6 rounded-full shadow-2xl text-2xl font-bold tracking-wide transition transform hover:scale-110 hover:bg-red-900 active:scale-95">
+      🎶 Would you?
+    </button>
+  </section>
+
+  <!-- Fun Facts Section -->
+  <section id="things" class="relative py-20 text-center text-white">
+    <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('images/I.png');"></div>
+    <div class="relative z-10 max-w-2xl mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-8 drop-shadow-lg">23 Things I Love About You ❤️</h2>
+      <div id="messageBox" class="text-xl md:text-2xl font-medium mb-6 p-6 rounded-xl bg-black bg-opacity-50 shadow-lg">
+        Click the button to see the first thing 💕
+      </div>
+      <button onclick="showNext()" class="bg-red-800 text-white px-8 py-4 rounded-full shadow-lg hover:bg-red-900 hover:scale-105 transition text-lg">
+        Next Fun Fact
+      </button>
+    </div>
+  </section>
+
+  <!-- Closing Section -->
+  <section id="closing" class="py-20 bg-red-900 text-white text-center">
+    <h2 class="text-4xl font-bold mb-6">I Love You Forever ❤️</h2>
+    <p class="text-lg max-w-xl mx-auto">
+      You make my world brighter every day, Fidelle. Thank you for being my everything.  
+      Here's to more memories, laughter, and love. 💕
+    </p>
+  </section>
+
+  <!-- Script for Fun Facts -->
+  <script>
+    const messages = [
+      "1. You have the most beautiful smile.",
+      "2. You make every moment brighter.",
+      "3. Your laugh is my favorite sound.",
+      "4. You are my safe place.",
+      "5. You are strong and inspiring.",
+      "6. You make me feel loved every day.",
+      "7. You look gorgeous in every color, but maroon fits you best.",
+      "8. You are thoughtful and kind.",
+      "9. I admire your strength.",
+      "10. You make life exciting.",
+      "11. You’re the prettiest person I know.",
+      "12. You always know how to cheer me up.",
+      "13. You make even bad days feel lighter.",
+      "14. You’re my favorite person in the world.",
+      "15. I’m so lucky to have you.",
+      "16. You are supportive and caring.",
+      "17. You are one of a kind.",
+      "18. You make me a better person.",
+      "19. You are the best lil artist.",
+      "20. You’re beautiful inside and out.",
+      "21. You’re the first thought in my morning.",
+      "22. You’re the best gift life has given me.",
+      "23. You’re my everything. ❤️"
+    ];
+    let index = 0;
+    function showNext() {
+      const box = document.getElementById("messageBox");
+      if (index < messages.length) {
+        box.innerHTML = messages[index];
+        index++;
+      } else {
+        box.innerHTML = "✨ That’s all 23 things, but I could go on forever... I love you, Fidelle ❤️";
+      }
+    }
+  </script>
+
+</body>
+</html>
